@@ -1,0 +1,290 @@
+html {
+  min-block-size: 100%;
+  inline-size: 100vw;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  word-break: keep-all;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3rem;
+}
+
+img {
+  max-inline-size: 100%;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-top: 0;
+}
+
+.section-title {
+  color: #87629a;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #23424a;
+  font-weight: 900;
+  background-color: #38cfd9;
+  padding: 0.75em 2em;
+  border-radius: 100px;
+}
+
+.btn:hover,
+.btn:focus {
+  opacity: 0.75;
+}
+
+.container {
+  inline-size: 80%;
+  max-inline-size: 1100px;
+  margin: 0 auto;
+  /* added for nav-toggle positioning */
+  position: relative;
+  /* display: flex;
+  flex-flow: column nowrap; */
+}
+
+header {
+  background: #136c72;
+  padding: 1em 0;
+  text-align: center;
+}
+
+header > .container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+}
+
+.nav {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  inline-size: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1rem;
+  /* color: white; */
+}
+
+.nav__link {
+  color: white;
+  text-decoration: none;
+}
+
+.nav__item {
+  list-style-type: none;
+}
+
+.nav__list {
+  padding: 0 3rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  line-height: 3rem;
+  /* list-style-position: inside; */
+}
+
+.nav__link--button {
+  background-color: white;
+  border-radius: 2rem;
+  padding: 0.5rem 0.625rem;
+  color: #136c72;
+}
+
+.nav-toggle {
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  cursor: pointer;
+  border: 0;
+  inline-size: 3rem;
+  block-size: 3rem;
+  padding: 0em;
+  border-radius: 50%;
+  background: #072a2d;
+  color: white;
+  transition: opacity 250ms ease;
+  position: absolute;
+  left: 0;
+}
+
+.nav-toggle:focus,
+.nav-toggle:hover {
+  opacity: 0.75;
+}
+
+.hamburger {
+  inline-size: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  margin: 0 auto;
+  block-size: 3px;
+  background: white;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  inline-size: 100%;
+}
+
+.hamburger::before {
+  transform: translateY(-6px);
+}
+
+.hamburger::after {
+  transform: translateY(3px);
+}
+
+/* made changes here from video
+   to make it more accessible.
+   
+   Works the same :) */
+.nav {
+  visibility: hidden;
+  block-size: 0;
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  opacity: 0;
+}
+
+.nav--visible {
+  visibility: visible;
+  block-size: auto;
+  opacity: 1;
+  z-index: 1;
+  top: 3.125rem;
+  position: absolute;
+  background-color: #136c72;
+  inline-size: 100vw;
+}
+
+.logo {
+  block-size: 30px;
+}
+
+.hero {
+  padding: 100px 0;
+  background-color: #23424a;
+  color: #fff;
+}
+
+.hero__img {
+  margin-top: 2em;
+  max-inline-size: 100%;
+}
+
+.hero p {
+  margin-bottom: 3em;
+}
+
+.main {
+  margin-top: 3em;
+}
+
+.sidebar {
+  padding: 1em;
+  text-align: center;
+  color: #fff;
+  background-color: #136c72;
+}
+
+@media (min-width: 800px) {
+  .hero > .container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  .nav {
+    visibility: visible;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-content: center;
+    inline-size: 100vw;
+  }
+
+  .nav--visible {
+    visibility: visible;
+    block-size: auto;
+    opacity: 1;
+    z-index: 1;
+    top: 3.125rem;
+    position: absolute;
+    background-color: #136c72;
+    max-inline-size: 100vw;
+  }
+
+  .nav__list {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .hero__text {
+    inline-size: 62%;
+  }
+
+  .hero__img {
+    max-inline-size: 32%;
+    align-self: center;
+    margin: 0;
+  }
+
+  .primary-content {
+    inline-size: 62%;
+  }
+
+  .sidebar {
+    inline-size: 32%;
+  }
+}
